@@ -1,0 +1,64 @@
+.top_slider{
+    background-color: #ffffff;
+    height: 500px;
+    display: flex;
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+.mid_slider{
+    background-color: rgb(11, 73, 73);
+    height: 600px;
+   
+}
+.last_slider{
+    background-image: linear-gradient(to right, rgb(250, 29, 40) ,rgb(254, 0, 59));
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-transform: capitalize;
+    text-shadow: 2px 2px 10px #fff;
+
+}
+.last_slider h1{
+    font-size: 70px;
+}
+.top_slider div {
+    flex-basis: 50%;
+    justify-content: flex-end;
+}
+#lines{
+  padding: 30px;
+  height: 200px;
+  margin: 90px;
+  width:200px;
+}
+#lines button{
+    width:100px;
+    border: none;
+    height: 40px;
+    border-radius: 6px;
+    background-image: linear-gradient(to right, rgb(250, 29, 40) ,rgb(254, 0, 59));
+color: white;
+ padding: 5px;
+    margin: 10px;
+}
+#lines h1{
+    padding: 5px;
+    font-size: 80px;
+}
+#lines h3{
+    padding: 5px;
+    margin: 7px;
+}
+#lines p{
+    padding: 5px;
+    margin: 7px;
+}
+.top_slider div img{
+    height: 500px;
+}
+.top_slider div h1{
+color:  rgb(254, 0, 59); 
+}
