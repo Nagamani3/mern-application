@@ -10,7 +10,11 @@ import Common from './Pages/Common';
 import "./global.css";
 import Slider from './Pages/Slider';
 import Navbar from './Pages/Navbar';
-import "./sliders.css"
+import "./sliders.css";
+import Reacticons from "./custom icons/Reacticons"
+import { Droppable } from 'react-beautiful-dnd';
+import { DragDropContext } from 'react-beautiful-dnd';
+import { Draggable } from 'react-beautiful-dnd';
 
 export let store = createContext()
 
@@ -19,24 +23,48 @@ export let store = createContext()
 
 function App() {
   let [token, setToken] = useState(null)
-  console.log(token)
+  const handleDragEnd = (results) => {
+    console.log(results)
+  }
  
   return (
-    <store.Provider value={[token, setToken]}>
-      <Router>
-        <header>
-          <Navbar />
-        </header>
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/slider" element={<Slider />} />
-            <Route path="/Signup" element={<SignUp />} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
-        </main>
-      </Router>
-    </store.Provider>
+    <DragDropContext
+      onDragEnd={results => {
+        handleDragEnd(results);
+      }}
+    >
+      <Droppable droppableId="body" direction='horizontal' type='verticle'>
+        {provided => (
+          <div
+            className="dnd"
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+          >
+            <store.Provider value={[token, setToken]}>
+              <Router>
+                <header>
+                  <Navbar />
+                  
+                      <Reacticons />
+                    {provided.placeholder}
+                    
+                </header>
+                <main>
+                  <Routes>
+                    <Route path="/posts" element={<Home />} />
+                    <Route path="/" element={<Slider />} />
+                    <Route path="/Signup" element={<SignUp />} />
+                    <Route path="/login" element={<Login />} />
+                  </Routes>
+                </main>
+              </Router>
+            </store.Provider>
+            ;
+          </div>
+        )}
+      </Droppable>
+    </DragDropContext>
+
     //  <Toggle/>
     // <Common/>
   );

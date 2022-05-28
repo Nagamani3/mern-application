@@ -26,7 +26,7 @@ const SignUp = () => {
       <form onSubmit={handleSubmit}>
         <h1>SIGN UP</h1>
 
-        <span style={{ color: 'rgb(254, 0, 59)' }}>
+        <span style={{ color: 'white' }}>
           <FiUserCheck></FiUserCheck>
           <p>username</p>
         </span>

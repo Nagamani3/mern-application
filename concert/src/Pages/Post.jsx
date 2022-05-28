@@ -19,7 +19,7 @@ const Post = () => {
 
   return (
     <section>
-      <div><Reacticons/></div>
+     
           <article className='map'>{album.map((x) => {
               return (
                 <div className="card_body">
